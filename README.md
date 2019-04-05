@@ -1,6 +1,6 @@
 # Mordell-Faltings
-## What is this?
+### What is this?
 Reading note of Moriwaki &amp; Ikoma &amp; Kawaguchi「The Mordell-Faltings theorem」.
 
-## Attention
+### Attention
 I can write only broken English as of this moment.  
