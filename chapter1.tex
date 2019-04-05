@@ -6,7 +6,12 @@
 Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , \gra_n \} $ with respect to $\trform{ \; , \; }$. Then, for any $x \in O_K$, we have $x = \trform{x,\gra_1} \beta_1 + \cdots + \trform{x,\gra_n} \beta_n$.
 }
 \begin{proof}
-  hogehoge
+  Since the trace form $\trform{\;,\;}$ is degenerate, $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$. Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. There are $\beta_{ij} \in \Q$ such that
+  \[
+  p_i = \sum_{j=1}^n \trform{\;, \gra_j} \beta_{ij}.
+  \]
+  This means $id_K = \sum_i \gra_i p_i = \sum_j \trform{\;, \gra_j} \sum_i \gra_i \beta_{ij}$, then we get
+  $O_K \subset \Z \beta_1 + \cdots + \Z \beta_n$ for $\beta_j = \sum_i \gra_i \beta_{ij}$. Since $id_K  = \sum_j \trform{\;, \gra_j} \beta_j$ , $\beta_j$ are basis of $K$ and $\Z \beta_1 + \cdots + \Z \beta_n$ is a free $\Z$-module.
 \end{proof}
 
 
@@ -15,7 +20,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 Because $(O_K)_P$ is a principal ideal domain, $(O_{K'})_P$ is a free $(O_K)_P$-module of rank $[K':K]$.
 }
 \begin{proof}
-  hogehoge
+It remain to be answered.
 \end{proof}
 
 
@@ -29,7 +34,18 @@ Thus
 }
 
 \begin{proof}
-  hogehoge
+  We set $A = O_K, A'=O_{K'}$. Then we get
+  \begin{align*}
+    A'/PA' &\cong A' \ts_A A/P \\
+    &\cong A' \ts_A \Frac A/P \\
+    &\cong A' \ts_A \Coker (PA_P \to A_P) \\
+    &\cong \Coker (A' \ts_A PA_P \to A' \ts_A A_P) \\
+    &\cong (A')_P / P(A')_P \\
+    (A')_P / P(A')_P  &\cong A' \ts_A \Coker (PA_P \to A_P) \\
+    &\cong A' \ts_A A_P / PA_P \\
+    &\cong (A' \ts_A  A_P) \ts_{A_P} A_P / PA_P \\
+    &\cong (A')_P \ts_{A_P} A_P / PA_P.
+  \end{align*}
 \end{proof}
 
 
@@ -39,5 +55,16 @@ Thus
 We take a integral basis $\{ \gro_1, \cdots , \gro_n \}$ of $O_K$, we denote by $\{ \beta_1, \cdots, \beta_n  \}$ the dual basis with respect to $\trform{\;,\;}$. Then we have $\calm = \Z \beta_1 + \cdots +  \Z \beta_n$.
 }
 \begin{proof}
-  hogehoge
+  It remain to be answered.
+\end{proof}
+
+
+\bfsubsection{Adjacent to Lemma 1.17}
+\barquo{
+The difference of $K$ is defined by $\cald_K = \calm^{-1}$. Because $O_K \subset \calm$, we have $\cald_K \subset O_K$, so $\cald_K$ is an ideal of $O_K$.
+}
+\begin{proof}
+  $
+  O_K = \calm \calm^{-1} = \cald_K \calm \supset \cald_K O_K \supset \cald_K.
+  $
 \end{proof}
