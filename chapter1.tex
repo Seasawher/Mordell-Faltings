@@ -1,17 +1,42 @@
 \bfsection{Some basics of algebraic number theory}
 
+\bfsubsection{Lemma 1.3}
+\barquo{
+Recall that $\trform{\;,\;}$ is non-degenerate if the Gramm matrix with respect to one (and hence any) basis of $L$ over $F$ is invertible.
+}
+\begin{proof}
+  Almost trivial. Try to prove it.
+\end{proof}
+
 
 \bfsubsection{Proposition 1.4}
 \barquo{
 Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , \gra_n \} $ with respect to $\trform{ \; , \; }$. Then, for any $x \in O_K$, we have $x = \trform{x,\gra_1} \beta_1 + \cdots + \trform{x,\gra_n} \beta_n$.
 }
 \begin{proof}
-  Since the trace form $\trform{\;,\;}$ is degenerate, $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$. Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. There are $\beta_{ij} \in \Q$ such that
+  Since the trace form $\trform{\;,\;}$ is degenerate, $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$.
+
+  Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. There are $\beta_{ij} \in \Q$ such that
   \[
   p_i = \sum_{j=1}^n \trform{\;, \gra_j} \beta_{ij}.
   \]
   This means $id_K = \sum_i \gra_i p_i = \sum_j \trform{\;, \gra_j} \sum_i \gra_i \beta_{ij}$, then we get
   $O_K \subset \Z \beta_1 + \cdots + \Z \beta_n$ for $\beta_j = \sum_i \gra_i \beta_{ij}$. Since $id_K  = \sum_j \trform{\;, \gra_j} \beta_j$ , $\beta_j$ are basis of $K$ and $\Z \beta_1 + \cdots + \Z \beta_n$ is a free $\Z$-module.
+
+  We set $c_{ij} = \trform{\gra_i, \gra_j}$. And we get
+  \[
+  \grd_{ik} = p_i(\gra_k) = \sum_j \beta_{ij} c_{jk}.
+  \]
+  That means $I = \beta c$ by setting $\beta = (\beta_{ij}), c=(c_{ij})$, so $\beta$ is symmetric i.e. $\beta_{ij} = \beta_{ji}$.
+
+  Then, we get
+  \begin{align*}
+    \trform{\beta_j, \gra_k} &= \sum_i \beta_{ij} \trform{\gra_i, \gra_k} \\
+    &= \sum_i \beta_{ji} \trform{\gra_i, \gra_k} \\
+    &= p_j(\gra_k ) \\
+    &= \grd_{jk}.
+  \end{align*}
+  This is suggestive of orthogonality.
 \end{proof}
 
 
@@ -20,7 +45,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 Because $(O_K)_P$ is a principal ideal domain, $(O_{K'})_P$ is a free $(O_K)_P$-module of rank $[K':K]$.
 }
 \begin{proof}
-It remain to be answered.
+It remains to be answered.
 \end{proof}
 
 
@@ -32,7 +57,6 @@ Thus
   &=  \dim_{O_K/P} ((O_{K})_P / P(O_{K})_P) \ts_{(O_K)_P} (O_{K'})_P
 \end{align*}
 }
-
 \begin{proof}
   We set $A = O_K, A'=O_{K'}$. Then we get
   \begin{align*}
@@ -55,7 +79,7 @@ Thus
 We take a integral basis $\{ \gro_1, \cdots , \gro_n \}$ of $O_K$, we denote by $\{ \beta_1, \cdots, \beta_n  \}$ the dual basis with respect to $\trform{\;,\;}$. Then we have $\calm = \Z \beta_1 + \cdots +  \Z \beta_n$.
 }
 \begin{proof}
-  It remain to be answered.
+  See the note of Prop 1.4.
 \end{proof}
 
 
@@ -68,3 +92,24 @@ The difference of $K$ is defined by $\cald_K = \calm^{-1}$. Because $O_K \subset
   O_K = \calm \calm^{-1} = \cald_K \calm \supset \cald_K O_K \supset \cald_K.
   $
 \end{proof}
+
+
+
+\bfsubsection{Lemma 1.17}
+\barquo{
+Indeed, because $\#(O_K / \cald_K) = \# (\calm / O_K)$,
+}
+\begin{proof}
+  See Yukie\cite{雪江N2} Proposition 1.8.6.
+\end{proof}
+
+
+
+
+\bfsubsection{Adjacent to 2.4}
+\barquo{
+In other words, the absolute (logarithmic) Weil height is not invariant under linear coordinate changes. This is why it is sometimes called the naive height.
+}
+\begin{que}
+  Why they want the height to be invariant? Is there non-constant invariant height?
+\end{que}
