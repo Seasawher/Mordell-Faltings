@@ -1,6 +1,6 @@
 # Mordell-Faltings
-### What is this?
-Reading note of Moriwaki &amp; Ikoma &amp; Kawaguchi「The Mordell-Faltings theorem」.
+### なにこれ
+Moriwaki &amp; Ikoma &amp; Kawaguchi「The Mordell-Faltings theorem」のノートです。
 
-### Attention
-I can write only broken English as of this moment.  
+### お願い
+洋書だからノートも英語で書こうと試みました。したがって、Broken Englishのカタマリになっています。見逃して下さい。
