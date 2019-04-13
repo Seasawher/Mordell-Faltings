@@ -1,4 +1,4 @@
-\bfsection{Some basics of algebraic number theory}
+\bfsection{1 Some basics of algebraic number theory}
 
 \bfsubsection{Lemma 1.3}
 \barquo{
@@ -45,7 +45,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 Because $(O_K)_P$ is a principal ideal domain, $(O_{K'})_P$ is a free $(O_K)_P$-module of rank $[K':K]$.
 }
 \begin{proof}
-It remains to be answered.
+See the proof of Prop 1.4. We obtain $O_{K'} \subset O_K \beta_1 + \cdots +  O_K \beta_n$ for some $\beta_i \in K'$. Taking a localization, we get $(O_{K'})_P \subset (O_K)_P \beta_1 + \cdots +  (O_K)_P \beta_n$. Since $(O_K)_P$ is a PID, $(O_{K'})_P$ is a free $(O_K)_P$-module. The rank is not lower than $[K':K]$ because integral basis generate $K'$ over $K$.
 \end{proof}
 
 
@@ -104,12 +104,22 @@ Indeed, because $\#(O_K / \cald_K) = \# (\calm / O_K)$,
 \end{proof}
 
 
-
-
-\bfsubsection{Adjacent to 2.4}
+\bfsubsection{Theorem 1.18}
 \barquo{
-In other words, the absolute (logarithmic) Weil height is not invariant under linear coordinate changes. This is why it is sometimes called the naive height.
+Lemma 1.17 (3) gives
+\[
+\log_p (\# ( ( (O_K)_P / (\cald_K)_P ) ) = \sum_i \ord_{P_i} (\cald_K)_{f_i}
+\]
 }
-\begin{que}
-  Why they want the height to be invariant? Is there non-constant invariant height?
-\end{que}
+\begin{proof}
+  \textblue{It remains to be solved.}
+\end{proof}
+
+
+\bfsubsection{Theorem 1.18}
+\barquo{
+Because $\# (O_K / \cald_K) = \prod_{p \in S} \# ( ( (O_K)_P / (\cald_K)_P ) $, we obtain the assertion.
+}
+\begin{proof}
+  See Yukie\cite{雪江N2} Prop1.8.9.
+\end{proof}
