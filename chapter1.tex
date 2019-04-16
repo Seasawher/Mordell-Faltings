@@ -40,12 +40,43 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 \end{proof}
 
 
+
+\bfsubsection{Lemma 1.7}
+\barquo{
+To see this, we take $t \in P(O_K)_P$ with $t \notin P^2(O_K)_P$.
+}
+\begin{rem}
+  Since $(O_K)_P$ is a Dedekind domain, we get $P(O_K)_P \neq P^2(O_K)_P$ by uniqueness of prime decomposition.
+\end{rem}
+
+
+\bfsubsection{Adjacent to Lemma 1.8}
+\barquo{
+For a nonzero prime ideal $P$ of $O_K$, we set $P \cap \Z = (p)$, where $p$ is a prime of $Z$. Because $O_K$ is a free $Z$-module of rank $[K:\Q]$, $O_K/P$ is a finite extension of $\Z/(p)$ with degree at most $[K:\Q]$.
+}
+\begin{proof}
+There is a canonical surjection $O_K/pO_K \to O_K /P$, so we get $\# (O_K /P) \leq \# (O_K/pO_K)$. But we obtain $O_K/pO_K \cong O_K \ts_{\Z} \Z / p \Z$. Since $O_K$ is a free $\Z$-module of rank $n = [K:\Q]$, we conclude $O_K/pO_K \cong (\Z / p \Z )^n $. So, $\# (O_K /P) \leq \# (O_K/pO_K) = p^n$.
+\end{proof}
+
+
+
+\bfsubsection{Lemma 1.8}
+\barquo{
+\[
+\bigoplus_{i=1}^r O_K/P_i^{e_i} = \bigoplus_{i=1}^r (O_K/P_i^{e_i})_{P_i}
+\]
+}
+\begin{proof}
+  Because $O_K/P_i^{e_i}$ is a local ring with maximal ideal $P_i/P_i^{e_i}$.
+\end{proof}
+
+
 \bfsubsection{Lemma 1.16}
 \barquo{
 Because $(O_K)_P$ is a principal ideal domain, $(O_{K'})_P$ is a free $(O_K)_P$-module of rank $[K':K]$.
 }
 \begin{proof}
-See the proof of Prop 1.4. We obtain $O_{K'} \subset O_K \beta_1 + \cdots +  O_K \beta_n$ for some $\beta_i \in K'$. Taking a localization, we get $(O_{K'})_P \subset (O_K)_P \beta_1 + \cdots +  (O_K)_P \beta_n$. Since $(O_K)_P$ is a PID, $(O_{K'})_P$ is a free $(O_K)_P$-module. The rank is not lower than $[K':K]$ because integral basis generate $K'$ over $K$.
+See the proof of Prop 1.4. We obtain $O_{K'} \subset O_K \beta_1 \oplus \cdots \oplus  O_K \beta_n$ for some $\beta_i \in K'$. Taking a localization, we get $(O_{K'})_P \subset (O_K)_P \beta_1 \oplus \cdots \oplus  (O_K)_P \beta_n$. Since $(O_K)_P$ is a PID, $(O_{K'})_P$ is a free $(O_K)_P$-module. The rank is not lower than $[K':K]$ because integral basis generate $K'$ over $K$.
 \end{proof}
 
 
