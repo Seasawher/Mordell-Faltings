@@ -132,7 +132,7 @@
 \newcommand{\transpose}[1]{\, {\vphantom{#1}}^t\!{#1}}%行列の転置
 \newcommand{\pmat}[1]{ \begin{pmatrix} #1 \end{pmatrix} }%まるかっこ行列
 \newcommand{\f}[2]{\frac{#1}{#2}}%分数
-\newcommand{\kakko}[1]{ \langle #1  \rangle}%鋭角かっこ%\angleはもうある
+\newcommand{\kakko}[1]{ \langle #1  \rangle}%角かっこ%\angleはもうある
 \newcommand{\I}{\sqrt{-1}}%虚数単位。\iは既にある。
 \newcommand{\single}{\{ 0 \}}%０のシングルトン
 \newcommand{\clsub}{\subset_{\text{closed}}}%閉部分集合
@@ -154,8 +154,8 @@
 
 
 \DeclareMathOperator{\Tr}{Tr}%トレース
-\newcommand{\trform}[1]{ (#1)_{\Tr_{K/\Q}} }
-
+\newcommand{\trform}[1]{ (#1)_{\Tr_{K/\Q}} }%代数体のQ上のトレース
+\DeclareMathOperator{\vol}{vol}%ボリューム
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       演算子                                       %%

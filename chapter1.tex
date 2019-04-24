@@ -14,9 +14,11 @@ Recall that $\trform{\;,\;}$ is non-degenerate if the Gramm matrix with respect 
 Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , \gra_n \} $ with respect to $\trform{ \; , \; }$. Then, for any $x \in O_K$, we have $x = \trform{x,\gra_1} \beta_1 + \cdots + \trform{x,\gra_n} \beta_n$.
 }
 \begin{proof}
-  Since the trace form $\trform{\;,\;}$ is degenerate, $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$.
+Since the trace form $\trform{\;,\;}$ is nondegenerate, $K \to K^* \st x \mapsto \trform{ \cdot, x}$ is a isomorphism. Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. Then, we set $\beta_j$ the preimage of $p_j$.
+  \begin{comment}
+   $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$.
 
-  Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. There are $\beta_{ij} \in \Q$ such that
+  There are $\beta_{ij} \in \Q$ such that
   \[
   p_i = \sum_{j=1}^n \trform{\;, \gra_j} \beta_{ij}.
   \]
@@ -37,6 +39,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
     &= \grd_{jk}.
   \end{align*}
   This is suggestive of orthogonality.
+\end{comment}
 \end{proof}
 
 
@@ -46,7 +49,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 To see this, we take $t \in P(O_K)_P$ with $t \notin P^2(O_K)_P$.
 }
 \begin{rem}
-  Since $(O_K)_P$ is a Dedekind domain, we get $P(O_K)_P \neq P^2(O_K)_P$ by uniqueness of prime decomposition.
+  From Nakayama's lemma.
 \end{rem}
 
 
@@ -70,6 +73,53 @@ There is a canonical surjection $O_K/pO_K \to O_K /P$, so we get $\# (O_K /P) \l
   Because $O_K/P_i^{e_i}$ is a local ring with maximal ideal $P_i/P_i^{e_i}$.
 \end{proof}
 
+
+\bfsubsection{Adjacent to Theorem 1.9}
+\barquo{
+we consider the value $\sqrt{\det (\kakko{e_i,e_j})}$.
+}
+\begin{rem}
+  Why we get $\det (\kakko{e_i,e_j})$? Apply Gram-Schmidt orthonormalization.
+\end{rem}
+
+
+\bfsubsection{Adjacent to Theorem 1.9}
+\barquo{
+Then $\vol (M, \kakko{,} )$ is equal to the volume of the $n$-dimensional parallelpiped $\Pi$ spanned by $e_1, \cdots , e_n$,
+}
+\begin{proof}
+  Let $F \colon (V, \kakko{,}) \to \R^n$ be  an isometric isomorphism. Then, we generate
+  \begin{align*}
+    \vol (M, \kakko{,} )^2 &= \det (\kakko{e_i,e_j}) \\
+    &= \det (\kakko{Fe_i,Fe_j})
+  \end{align*}
+  We set $E = (Ee_1, \cdots, Fe_n)$. $E \in M_n(\R)$. Then we get $( \kakko{Fe_i,Fe_j})_{i,j} = {}^tE E$, and $\vol (M, \kakko{,} ) = \abs{\det E }$. From Yukie\cite{雪江線形} Theorem 4.9.1, $\abs{\det E } = \vol(\Pi)$.
+\end{proof}
+
+
+\bfsubsection{Lemma 1.10}
+\barquo{
+\[
+\# (\Coker (M \xrightarrow{f_B} M) ) = \# (\Coker (M \xrightarrow{f_Q} M \xrightarrow{f_B} M \xrightarrow{f_P} M ) )
+\]
+}
+\begin{proof}
+  Why $f_P(M) \subset M$? I think we don't have to show $f_P(M) \subset M$. It is sufficient to show
+  \begin{align*}
+    \Coker (M \xrightarrow{f_B} M) ) &\cong   \Coker (\Z^n \xrightarrow{B} \Z^n) ) \\
+    &\cong \Coker QBP
+  \end{align*}
+\end{proof}
+
+
+
+\bfsubsection{Lemma 1.12}
+\barquo{
+$\# (O_K/I)$ is finite. Then $I$ is a free $\Z$-module of rank $n$.
+}
+\begin{proof}
+  $I \subset O_K$ is a free $\Z$-module. Since $\# (O_K/I)$ is finite, we get $\forall x \in K \; \exists n \in \Z \st nx \in I$. So we obtain $I \ts_{\Z} \Q = K$. The rank of $I$ is $n$.
+\end{proof}
 
 \bfsubsection{Lemma 1.16}
 \barquo{
