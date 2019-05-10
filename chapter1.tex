@@ -15,31 +15,7 @@ Let $\{ \beta_1, \cdots , \beta_n \}$ be the dual basis of $\{ \gra_1, \cdots , 
 }
 \begin{proof}
 Since the trace form $\trform{\;,\;}$ is nondegenerate, $K \to K^* \st x \mapsto \trform{ \cdot, x}$ is a isomorphism. Let $p_i \colon K \to \Q$ be a projection map such that $p_i(x_1\gra_1 + \cdots + x_n\gra_n) = x_i$. Then, we set $\beta_j$ the preimage of $p_j$.
-  \begin{comment}
-   $\trform{\;, \gra_i}$ are linearly independent in $\Hom_{\Q} (K,\Q) = K^*$ and form $\Q$-basis of $K^*$.
 
-  There are $\beta_{ij} \in \Q$ such that
-  \[
-  p_i = \sum_{j=1}^n \trform{\;, \gra_j} \beta_{ij}.
-  \]
-  This means $id_K = \sum_i \gra_i p_i = \sum_j \trform{\;, \gra_j} \sum_i \gra_i \beta_{ij}$, then we get
-  $O_K \subset \Z \beta_1 + \cdots + \Z \beta_n$ for $\beta_j = \sum_i \gra_i \beta_{ij}$. Since $id_K  = \sum_j \trform{\;, \gra_j} \beta_j$ , $\beta_j$ are basis of $K$ and $\Z \beta_1 + \cdots + \Z \beta_n$ is a free $\Z$-module.
-
-  We set $c_{ij} = \trform{\gra_i, \gra_j}$. And we get
-  \[
-  \grd_{ik} = p_i(\gra_k) = \sum_j \beta_{ij} c_{jk}.
-  \]
-  That means $I = \beta c$ by setting $\beta = (\beta_{ij}), c=(c_{ij})$, so $\beta$ is symmetric i.e. $\beta_{ij} = \beta_{ji}$.
-
-  Then, we get
-  \begin{align*}
-    \trform{\beta_j, \gra_k} &= \sum_i \beta_{ij} \trform{\gra_i, \gra_k} \\
-    &= \sum_i \beta_{ji} \trform{\gra_i, \gra_k} \\
-    &= p_j(\gra_k ) \\
-    &= \grd_{jk}.
-  \end{align*}
-  This is suggestive of orthogonality.
-\end{comment}
 \end{proof}
 
 
@@ -105,7 +81,7 @@ The form $\kakko{,}_K$ is an inner product on $V$.
 \begin{rem}
   $\kakko{,}_K$ is trivially an inner product on $K$. Why should we show this?
 
-  Let $S$ be a $\Q$ vector space and $\kakko{,}$ a inner product on $S$. Then, bilinear form extended to $S \ts_{\Q} \R$ may not be an inner product. For example, set $S = \Q[\sqrt{2}]$ and $\kakko{x,y} = xy$. 
+  Let $S$ be a $\Q$ vector space and $\kakko{,}$ a inner product on $S$. Then, bilinear form extended to $S \ts_{\Q} \R$ may not be an inner product. For example, set $S = \Q[\sqrt{2}]$ and $\kakko{x,y} = xy$.
 \end{rem}
 
 
@@ -120,13 +96,33 @@ $\# (O_K/I)$ is finite. Then $I$ is a free $\Z$-module of rank $n$.
 
 \bfsubsection{Lemma 1.16}
 \barquo{
-Because $(O_K)_P$ is a principal ideal domain, $(O_{K'})_P$ is a free $(O_K)_P$-module of rank $[K':K]$.
+We have $[K':K] = e_1 f_1 + \cdots + e_r f_r$.
 }
 \begin{proof}
-See the proof of Prop 1.4. We obtain $O_{K'} \subset O_K \beta_1 \oplus \cdots \oplus  O_K \beta_n$ for some $\beta_i \in K'$. Taking a localization, we get $(O_{K'})_P \subset (O_K)_P \beta_1 \oplus \cdots \oplus  (O_K)_P \beta_n$. Since $(O_K)_P$ is a PID, $(O_{K'})_P$ is a free $(O_K)_P$-module. The rank is not lower than $[K':K]$ because integral basis generate $K'$ over $K$.
+See the proof of Prop 1.4. We obtain $O_{K'} \subset O_K \beta_1 \oplus \cdots \oplus  O_K \beta_n$ for some $\beta_i  \in K'$. That implies there is an injection such that $O_{K'} \to \bigoplus_i O_K$. Because localization is a flat module, we get $(O_{K'})_P \subset (O_K )_P \beta_1 \oplus \cdots \oplus  (O_K )_P \beta_n$. Since $(O_K)_P$ is a PID, $(O_{K'})_P$ is a free $(O_K)_P$-module.
+The rank is $[K':K]$ because
+\[
+(O_{K'})_P \ts_{(O_K)_P} K = (O_{K'} \ts_{O_K} (O_K)_P ) \ts_{(O_K)_P}  K = O_{K'} \ts_{O_K} K = K'.
+\]
+Thus, as a $O_K /  P$ module,
+\begin{align*}
+O_{K'} / P O_{K'} &\cong O_K/P \ts_{O_K} O_{K'} \\
+&\cong  (O_K/P \ts_{O_K} (O_K)_P \ts_{(O_K)_P}  (O_K)_P ) \ts_{O_K}  O_{K'}  \\
+&\cong (O_K/P \ts_{O_K} (O_K)_P) \ts_{(O_K)_P} ( O_{K'})_P \\
+&\cong \bigoplus_{[K':K]}  (O_K/P \ts_{O_K} (O_K)_P) \\
+&\cong \bigoplus_{[K':K]}  O_K /P .
+\end{align*}
+Then it follows that
+\begin{align*}
+  \#(O_K / P)^{[K':K]} &= \# (O_{K'} / P O_{K'} ) \\
+  &= \prod_i \#(O_{K'} / {P'_i}^{e_i} ) \\
+  &=  \prod_i \#(O_{K'} / P'_i )^{e_i} \\
+  &=  \prod_i \#(O_{K} / P)^{e_{i} f_{i} }.
+\end{align*}
+Thus $[K':K] = \sum_i e_{i} f_{i}$.
 \end{proof}
 
-
+\begin{comment}
 \bfsubsection{Lemma 1.16}
 \barquo{
 Thus
@@ -149,8 +145,7 @@ Thus
     &\cong (A')_P \ts_{A_P} A_P / PA_P.
   \end{align*}
 \end{proof}
-
-
+\end{comment}
 
 \bfsubsection{Adjacent to Lemma 1.17}
 \barquo{
@@ -161,15 +156,6 @@ We take a integral basis $\{ \gro_1, \cdots , \gro_n \}$ of $O_K$, we denote by 
 \end{proof}
 
 
-\bfsubsection{Adjacent to Lemma 1.17}
-\barquo{
-The difference of $K$ is defined by $\cald_K = \calm^{-1}$. Because $O_K \subset \calm$, we have $\cald_K \subset O_K$, so $\cald_K$ is an ideal of $O_K$.
-}
-\begin{proof}
-  $
-  O_K = \calm \calm^{-1} = \cald_K \calm \supset \cald_K O_K \supset \cald_K.
-  $
-\end{proof}
 
 
 
@@ -182,22 +168,78 @@ Indeed, because $\#(O_K / \cald_K) = \# (\calm / O_K)$,
 \end{proof}
 
 
+
+
+
+
+
+
 \bfsubsection{Theorem 1.18}
 \barquo{
-Lemma 1.17 (3) gives
+Then we have
 \[
-\log_p (\# ( ( (O_K)_P / (\cald_K)_P ) ) = \sum_i \ord_{P_i} (\cald_K)_{f_i}
+\abs{ D_{K/\Q}} \leq \prod_{p \in S} p^{n-1+n \log_p(n)}.
 \]
 }
 \begin{proof}
-  \textblue{It remains to be solved.}
-\end{proof}
+  We may assume that $S = \setmid{p \in \Z}{\text{$p$ is ramified} }$. Set $B = O_K$ and $I = D_K$.
+\begin{description}
+  \item[Step 1] Let $p \in \Z$ be a prime number. Then $B_p$ and $I_p$ are free $\Z_p$-module of rank $n$. So there is a matrix $C \in M_n(\Z_p) \cap GL_n(\Q_p)$ such that the following diagram
+  \[
+  \xymatrix{
+  I_p \ar[r] \ar[d]  & B_p \ar[d] \\
+  \Z_p^n \ar[r]^-C & \Z_p^n
+  }
+  \]
+  commute. Then
+  \begin{align*}
+    \#(B/I \ts_{\Z} \Z_p) &= \#(\Coker C) \\
+    &= \#(\Z_p / (\det C) \Z_p) \\
+    &= \#(\wh{\Z}_p / (\det C) \wh{\Z}_p) &(\text{See Yukie\cite{雪江N2} Proposition 1.2.13}) \\
+    &= \#(B/I \ts_{\Z} \wh{\Z}_p).
+  \end{align*}
+\item[Step 2] It follows that
+  \begin{align*}
+    B/I \ts_{\Z} \wh{\Z}_p &\cong   B/I \ts_B B \ts_{\Z} \wh{\Z}_p \\
+    &\cong   B/I \ts_B  \bigoplus_i \wh{B}_{P_i} &(\text{See Yukie\cite{雪江N2} Theorem 1.3.23 }) \\
+    &\cong \bigoplus_i \wh{B}_{P_i} / P_i^{\ord_{P_i}(I)} \wh{B}_{P_i} \\
+    &\cong \bigoplus_i B/P_i^{\ord_{P_i}(I) }
+    \end{align*}
+\item[Step 3] Set $J = I \cap \Z$. Because $B/I$ is finitely generated $\Z$-module, we get
+\[
+\Supp_{\Z} (B/I) = V(\ann_{\Z} (B/I)) = V(J).
+\]
+See Matsumura\cite{松村} adjacent to Theorem 4.4 if you do not understand the first equation.
 
-
-\bfsubsection{Theorem 1.18}
-\barquo{
-Because $\# (O_K / \cald_K) = \prod_{p \in S} \# ( ( (O_K)_P / (\cald_K)_P ) $, we obtain the assertion.
-}
-\begin{proof}
-  See Yukie\cite{雪江N2} Prop1.8.9.
+And for any prime number $p \in \Z$, then we obtain
+\begin{align*}
+  p \not\in \Supp_{\Z}(B/I) &\iff B/I \ts_{\Z} \Z_p = 0 \\
+  &\iff \#(B/I \ts_{\Z} \Z_p ) = 1 \\
+  &\iff \forall i \; \#(B  / P_i^{\ord_{P_i}(I) }) = 1 \\
+  &\iff \ord_{P_i}(I) = 0 \\
+  &\iff \text{$p$ is unramified}
+  \end{align*}
+  Thus we conclude $V(J) = \Supp_{\Z} (B/I) = S$.
+  \item[Step 4] Then we get
+  \begin{align*}
+    \#(B/I \ts_{\Z} \Z_p ) &= \prod_i \#( B/P_i^{\ord_{P_i}(I) } )  \\
+    &= \prod_i \#( B/P_i)^{\ord_{P_i}(I) }   \\
+    &= \prod_i \#( \Z/p)^{f_i \ord_{P_i}(I) }.
+  \end{align*}
+  So we conclude $\log_p( \#(B/I \ts_{\Z} \Z_p ) ) \leq n - 1 + n \log_p(n)$.
+  \item[Step 5] Recall that $J = \ann_{\Z}(B/I)$. Then we get
+  \begin{align*}
+    B/I &\cong (B/I )/ J (B/I) \\
+    &\cong \bigoplus_{p \in S} (B/I) / p^e (B/I) &(\text{$e$ depends on $p$}) \\
+    &\cong \bigoplus_{p \in S} B /( p^e B+ I) \\
+    &\cong \bigoplus_{p \in S} B /( p^e B+ I) \ts_{\Z} \Z_p \\
+    &\cong \bigoplus_{p \in S} B_p /( p^e B_p+ I_p) \\
+        &\cong \bigoplus_{p \in S} B_p /( J B_p+ I_p) \\
+        &\cong \bigoplus_{p \in S} B_p / I_p  \\
+  \end{align*}
+  Now we conclude that
+  \[
+  \abs{ D_{K/\Q}} = \#(B/I) = \prod_{p \in S} \#(B_p/I_p) \leq \prod_{p \in S} p^{n-1+n\log_p(n)}.
+  \]
+\end{description}
 \end{proof}
