@@ -1,15 +1,32 @@
 
 \bfsection{2 Theory of heights}
 
-\begin{comment}%ただの疑問だから、Stackに投稿すべきかな～
-\bfsubsection{Adjacent to 2.4}
+
+\bfsubsection{Theorem 2.3}
 \barquo{
-In other words, the absolute (logarithmic) Weil height is not invariant under linear coordinate changes. This is why it is sometimes called the naive height.
+We set $n = [K:\Q]$. Let $\{ \gro_1, \cdots , \gro_n \}$ be the integral basis of $O_K$. Then $\{ x\gro_1, \cdots , x\gro_n \}$ is a basis of V.
 }
-\begin{que}
-  Why they want the height to be invariant? Is there a non-constant invariant height?
-\end{que}
-\end{comment}
+\begin{proof}
+  There is a $c_{ij} \in \Z$ such that $x \gro_i = \sum_{j} c_{ij} \gro_i$. Set $C= (c_{ij}) \in M_n(\Z)$. Then $\det C = N_{K/\Q}(x) \neq 0 $, so we get $C \in GL_n(\Q)$. And we obtain the assertion.
+\end{proof}
+
+\bfsubsection{Proposition 2.5}
+\barquo{
+\[
+h_K(x) \leq \sum_{\grs \in K(\C)} \log \left( \max_{1 \leq i \leq n} \{ \abs{x_i}_{\grs} \} \right).
+\]
+}
+\begin{rem}
+  \textblue{Misprint.} Add $1/[K:\Q]$ into the right.
+\end{rem}
+
+\bfsubsection{Proposition 2.6}
+\barquo{
+for any $x \in \ol{\Q}^n$.
+}
+\begin{rem}
+  \textblue{Misprint.} Exclude the case $x = 0$.
+\end{rem}
 
 \bfsubsection{Proposition 2.8}
 \barquo{
