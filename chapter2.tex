@@ -45,9 +45,160 @@ We set $L = \phi_1^* \calo_{\P^{m_1}}$ and set $k = \ol{\Q}$ and $\scrf = \calo_
 Let $\{ t_0, \cdots , t_m \}$ be a basis of $H^0(X,L)$ and let $X_0, \cdots , X_{m_1}$ be the homogenous coordinates of $\P^{m_1}$. Note that each $X_i$ is a global section of $\scrf$. And we set $s_i = \phi_1^* X_i \in H^0(X,L)$, where $\phi_1^* X_i$ is the image of $X_i \in H^0(\P^m, \scrf)$ by the canonical map $\scrf \to {\phi_1}_* \phi_1^* \scrf$.
 It follows from Hartshorne\cite{ha} section 2.7 Theorem 7.1 that $s_0, \cdots , s_{m_1}$ generate $L$. Because for any $x \in X$ the each germ $(s_i)_x$ is a linear combination of $(t_j)_x$, so $t_0, \cdots ,t_m$ generate $L$.
 
-There is a morphism $\phi \colon X \to \P^m $ such that $L \cong \phi^* \calo_{\P^m}(1)$ and $s_i = \phi^* X_i$ under this isomorphism. See Hartshorne\cite{ha} section 2.7 Theorem 7.1(b). There is another explanation on what $\phi$ is. For any $x \in X$, we can consider the germ $(t_i)_x \in L_x$. Denote $(t_i)_x$ by $t_i(x)$. Since $L$ is a line bundle, $L_x \cong k$. (\textblue{It remains to be learned.})
-Then we define the map $\phi \colon X \to \P^m$ by $\phi(x) = (t_0(x), \cdots , t_m(x))$. Note that there is a scalar ambiguity in choice of isomorphism $L_x \to k$. If $\forall i \; t_i(x) = 0$, then $(t_i)_x$ cannot generate $L_x$, which is a contradiction. Thus for any $x \in X$,
+There is a morphism $\phi \colon X \to \P^m $ such that $L \cong \phi^* \calo_{\P^m}(1)$ and $s_i = \phi^* X_i$ under this isomorphism. See Hartshorne\cite{ha} section 2.7 Theorem 7.1(b). There is another explanation on what $\phi$ is. For any $x \in X$, we can consider the germ $(t_i)_x \in L_x$. Denote $(t_i)_x$ by $t_i(x)$. Since $L$ is a line bundle, $L_x \cong \calo_{X,x}$.
+Then we define the map $\phi \colon X \to \P^m$ by $\phi(x) = (t_0(x), \cdots , t_m(x))$. Note that there is a scalar ambiguity in choice of morphism $L_x \to k$. If $\forall i \; t_i(x) = 0$, then $(t_i)_x$ cannot generate $L_x$, which is a contradiction. Thus for any $x \in X$,
 there is an index $i$ such that $t_i(x) \neq 0$.
 
 Then, the rest of the proof is almost trivial.
+\end{proof}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+First, suppose that $L$ is globally generated.
+}
+\begin{rem}
+  What "globally generated" means? We say $L$ is globally generated iff there is an exact sequence $\bigoplus_I O_X \to L \to 0$. Even if $L$ is an invertible sheaf, $L$ is not necessarily globally generated. For example, set $X = \P^m$, $L = \calo_{\P^m}(-1)$. Since $\Gamma(X,L) = 0$, $L$ is not globally generated.
+\end{rem}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+Let
+\[
+\phi_{\abs{L}} \colon X \to \P(H^0(X,L))
+\]
+be a morphism associated to the complete linear system $\abs{L}$. We set $h_L = h_{\phi_{\abs{L}}}$.
+}
+\begin{proof}
+Note that we want to get $h_L \in \Func(X)/B(X)$, which is not contained in  $\Func(X)$.
+
+What is a $\P(H^0(X,L))$? I think it is isomorphic to $\P^m$ by taking a basis of $H^0(X,L)$.
+
+  Set $k = \ol{\Q}$. Since $L$ be a globally generated line bundle on $X$, there is a basis $s_0, \cdots , s_m$ of $H^0(X,L)$ which generate $L$. Then we get a map $\phi_L \colon X \to \P^m$ such that $\phi_L^* \calo_{\P^m}(1) \cong L$. We define $h_L$ by $h_L = h_{\phi_L}$.
+\end{proof}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+Then ${s_i \ts t_j} $ induces a morphism $\phi \colon X \to \P^N$ such that $\phi^*(O_{\P^N(1)}) \cong L_1 \ts L_2$.
+}
+\begin{rem}
+  How $s_i \ts t_j \in H^0(X,L_1) \ts_k H^0(X,L_2)$ define an element of $H^0(X,L_1 \ts L_2)$? Let $\scrf$ be a presheaf defined by $\scrf(U) = \grG(U,L_1) \ts_{\calo_{X}(U)} \grG(U,L_2)$. Then there is a canonical morphism $\scrf \to L_1 \ts L_2$ since $L_1 \ts L_2$ is the sheafification of $\scrf$.
+  So we can see $s_i \ts t_j \in H^0(X,L_1 \ts L_2)$.
+
+  We denote the image of $s_i \ts t_l$ by $s_it_j \in H^0(X,L_1 \ts L_2)$. Why $\{ s_it_j \}$ generate $L_1 \ts L_2$? Take a stalk.
+\end{rem}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+tell us that $L \ts A^n$ is globally generated for any sufficiently large $n$.
+}
+\begin{rem}
+  The ampleness of $A$ implies that
+  \begin{align*}
+    \exists n_1 \st n \geq n_1 &\To L \ts A^n \; \text{is globally generated} \\
+      \exists n_2 \st n \geq n_2 &\To  A^n \; \text{is globally generated}
+  \end{align*}
+  Then we set $n = \max_i \{ n_i\}$.
+\end{rem}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+Then, modulo $B(X)$, we have
+\[
+h_{f^*(L)} = h_{f^*(C) \ts f^*(C)^{-1}}
+\]
+}
+\begin{rem}
+  See G\"ortz Wedhorn\cite{GW} Remark 7.10.
+\end{rem}
+
+
+\bfsubsection{Theorem 2.9}
+\barquo{
+Then by (1), $h_L$ must be equal to $h_{L_1} - h_{L_2}$ modulo $B(X)$.
+}
+\begin{rem}
+  Let $\grs \colon \{ \text{line bundles }\} \to \Func(X)/B(X)$ be a map which satisfies the properties (1), (2), (3). By (3), for globally generated line bundle $L$, we get $\grs_L = h_L$. Because $\grG(X,O_X) = k$, we obtain $\grs_{O_X} = 0$. Thus (1) implies that $\grs_L = h_L$ for general line bundle $L$.
+\end{rem}
+
+
+\bfsubsection{Proposition 2.10}
+\barquo{
+Let $B$ be the Zariski closed subset of $X$ defined by the ideal sheaf
+\[
+\Image (H^0(X,L) \ts L^{-1} \to O_X).
+\]
+}
+\begin{rem}
+  What is the morphism $H^0(X,L) \ts L^{-1} \to O_X$? Note that there is a canonical morphism $f^* f_* L \to L$ where $f \colon X \to \Spec k$ is a $k$-scheme structure. Note that $f_* L$ is isomorphic to $\wt{H^0(X,L)}$. We denote this canonical morphism $f^* f_* L \to L$ by
+  \[
+  H^0(X,L) \ts O_X \to L.
+  \]
+  This is surjective if $L$ is globally generated.
+
+  In general, we define $V \ts_k O_X$ for $k$-module $V$, by setting
+  \[
+  V \ts_k O_k = f^{-1} \wt{V} \ts_{f^{-1}O_{\Spec k}} O_X = f^* \wt{V}.
+  \]
+Then we get $H^0(X,L) \ts L^{-1} \to O_X$ by tensoring $L^{-1}$.
+\end{rem}
+
+
+\bfsubsection{Proposition 2.10}
+\barquo{
+Then $\{  s s_i \}$ are linearly independent elements of $H^0(X,L)$.
+}
+\begin{rem}
+  What are $s s_i$ ? Note that there is a canonical morphism
+  \[
+  H^0(X,L) \ts H^0(X,L_2) \to H^0(X,L \ts L_2) \cong H^0(X,L_1)
+  \]
+  Thus I guess $s s_i$ is the image of $s \ts s_i$.
+
+  Moreover, why $s s_i$ are linearly independent? It suffices to show that the morphism of $k$-module
+  \[
+  s \colon H^0(X,L_2) \to H^0(X,L_1)
+  \]
+  is injective.
+
+  We prepare the following lemma.
+  \lem{
+  Let $X$ be an integral scheme and let $L$ be a line bundle on $X$. Assume that $s \in H^0(X,L)$ is not zero. Then for any $x \in X$, $s_x \neq 0$ in $L_x$.
+  }
+  \begin{proof}
+    Assume that there is a $z \in X$ such that $s_z = 0$. We want to show $s = 0 \in H^0(X,L)$. Since  $L$ is invertible, there is an open affine covering $X = \bigcup_{i \in I} U_i$ such that
+    \[
+    U_i = \Spec A_i , \; L|_{U_i} \cong \wt{A_i}
+    \]
+    On the other hand, $s_z = 0$ implies that there is an open subset $U \subset X$ such that $s|_U = 0$ and $z \in U$. \textblue{To be continued...}
+  \end{proof}
+\end{rem}
+
+
+
+\bfsubsection{Proposition 2.10}
+\barquo{
+Let $s_1, \cdots , s_n$ be a basis of $H^0(X,L)$. $\cdots$
+
+ Because $B = \setmid{x \in X}{s_1(x) = \cdots = s_n(x) = 0}$.
+}
+\begin{proof}
+  Why $B = \setmid{x \in X}{s_1(x) = \cdots = s_n(x) = 0}$? I guess
+  \begin{align*}
+    B &= \Supp \Coker(H^0(X,L) \ts L^{-1} \to O_X) \\
+    &= \Supp \Coker(H^0(X,L) \ts O_X \to L) \ts L^{-1}  &(\text{right exactness of tensor}) \\
+    &= \Supp \Coker(H^0(X,L) \ts O_X \to L) \cap \Supp L^{-1} \\
+    &= \Supp \Coker(H^0(X,L) \ts O_X \to L)
+  \end{align*}
+  Thus we get
+  \begin{align*}
+    x \in B &\iff \Coker(H^0(X,L) \ts O_X \to L)_x \neq 0 \\
+    &\iff \forall s \in H^0(X,L) \; x_x \in \frakm_x L_x \\
+    &\iff s(x) = 0 \\
+    &\iff s_1(x) = \cdots = s_n(x) = 0
+   \end{align*}
 \end{proof}
