@@ -130,7 +130,7 @@ Then by (1), $h_L$ must be equal to $h_{L_1} - h_{L_2}$ modulo $B(X)$.
 \barquo{
 Let $B$ be the Zariski closed subset of $X$ defined by the ideal sheaf
 \[
-\Image (H^0(X,L) \ts L^{-1} \to O_X).
+\Im (H^0(X,L) \ts L^{-1} \to O_X).
 \]
 }
 \begin{rem}
@@ -174,8 +174,11 @@ Then $\{  s s_i \}$ are linearly independent elements of $H^0(X,L)$.
     \[
     U_i = \Spec A_i , \; L|_{U_i} \cong \wt{A_i}
     \]
-    On the other hand, $s_z = 0$ implies that there is an open subset $U \subset X$ such that $s|_U = 0$ and $z \in U$. \textblue{To be continued...}
+    On the other hand, $s_z = 0$ implies that there is an open subset $U \subset X$ such that $s|_U = 0$ and $z \in U$. Since $X$ is integral, $U \cap \Spec A_i \neq \emptyset$. Thus there is a $g_i \in A_i \sm \{ 0 \}$ such that $\emptyset \neq D(g_i) \subset U \cap \Spec A_i$. Then $s|_{D(g_i)} = 0$ in $\grG(D(g_i), L) \cong {A_i}_{g_i}$.
+    Note that each $A_i$ is an integral domain because $X$ is integral. Thus we get $\forall i \; s|_{U_i}=0$ because $A_i \to {A_i}_{g_i}$ is injective. It follows from the sheaf axiom that $s=0 \in \grG(X,L)$.
   \end{proof}
+
+  Then, we can prove the injectivity of $s \colon O_X \to L$. First, by the lemma, $0 \to O_X \xrightarrow{s} L$ is exact. Since $L_2$ is flat, $0 \to L_2 \xrightarrow{s} L_1$ is exact. Since global section is left exact, we get $0 \to H^0(X,L_2) \xrightarrow{s} H^0(X,L_1)$ is exact.
 \end{rem}
 
 
