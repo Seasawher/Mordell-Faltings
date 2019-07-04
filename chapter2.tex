@@ -205,3 +205,145 @@ Let $s_1, \cdots , s_n$ be a basis of $H^0(X,L)$. $\cdots$
     &\iff s_1(x) = \cdots = s_n(x) = 0
    \end{align*}
 \end{proof}
+
+\begin{comment}
+\bfsubsection{Lemma 2.21}
+\barquo{
+
+
+
+LEMMA2.21. $\;$ Let $X$ be a projective variety, and let $x_0$ and $x_1$ be closed points of $X$. Then there is a projective curve $C$ on $X$ passing through $x_0$ and $x_1$.
+
+PROOF. If $x_0 = x_1$, then the result is obvious, so we assume that $x_0 \neq x_1$. We show the lemma by induction on dimension of $X$. The dimension one case is obvious. Suppose $\dim X \geq 2$ and let $\pi \colon \tilde{X} \to X$ be the blowup of $X$ along the two points $x_0,x_1$. We embed $\tilde{X}$ into projective space $\P^N$. We take $N$ to be the minimum among such embeddings. For a general hyperplane $H \subset \P^N$,
+$\tilde{Y} = \tilde{X} \cap H$ is irreducible and is not contatined in $\pi^{-1}(x_i)$.(See [Hartshorne section.2 theorem8.18])
+Further, because $\dim H + \dim \pi^{-1}(x_i) \geq N$, $H \cap \pi^{-1}(x_i) \neq \emptyset$. (See [Hartshorne section.1 theorem 7.2]) If we set $Y = \pi(\tilde{Y}) \subset X$, then $Y$ is a $(\dim X - 1)$-dimensional subvariety of $X$ that contains $x_0$ and $x_1$. By the induction hypothesis, there is a projective curve $C$ on $Y$ that passes through $x_0$ and $x_1$.
+This $C$ is a desired curve.
+}
+\begin{que} ${}$
+  \begin{description}
+    \item[(1)] 「If $x_0 = x_1$, then the result is obvious」なのはどうしてでしょうか。その点を通る多項式$f$をとって$X \cap V(f)$を考えるとふつうは一つ次元が下がりますが、これを繰り返せばよいということでしょうか。
+    \item[(2)] 「We embed $\tilde{X}$ into projective space $\P^N$.」とありますが、$X$が射影的な多様体なら$\tilde{X}$も射影的というHartshorne section 2 命題7.16から従っているのでしょうか。
+    \item[(3)] 「$\tilde{Y} = \tilde{X} \cap H$ is irreducible and is not contatined in $\pi^{-1}(x_i)$.」とあります。引用されているBertiniの定理（とHartshorne section 3 注意7.9.1）から既約性がわかるのはいいとして、「and is not contatined in $\pi^{-1}(x_i)$.」はなぜわかるのでしょうか。
+    \item[(4)] 「Further, because $\dim H + \dim \pi^{-1}(x_i) \geq N$, $H \cap \pi^{-1}(x_i) \neq \emptyset$」とあります。前半から後半が射影次元定理で従うのはよいです。前半はなぜ判るのでしょうか。
+    \item[(5)] 「If we set $Y = \pi(\tilde{Y}) \subset X$, then $Y$ is a $(\dim X - 1)$-dimensional subvariety of $X$ that contains $x_0$ and $x_1$.」とあります。なぜ次元がこうなるのでしょうか。
+  \end{description}
+\end{que}
+
+
+
+\newpage
+
+
+\bfsubsection{Theorem 2.23}
+\barquo{
+Theorem 2.23 (Theorem of the cube II)
+
+Let $X,Y$, and $Z$ be geometrically irreducible algebraic varieties over $F$, let $x_0 \in X(F)$, $y_0 \in Y(F)$, and $z_0 \in Z(F)$ be closed points, and let $L$ be a line bundle on $X \times Y \times Z$. Assume that $X$ and $Y$ are projective over $F$. Then $L$ is trivial if and only if
+\[
+ L|_{\{x_0\} \times Y \times Z}, \; L|_{X \times \{y_0\} \times Z}, \; L|_{X \times Y \times \{z_0\}}
+\]
+are all trivial.
+
+
+\textbf{proof of  theorem 2.23}
+\begin{description}
+  \item[Step 1] Let $p_{13}$ denote the projection $X \times Y \times Z \to X \times Z$ to the first and the last factor. If we show that $L|_{ \{x\} \times Y \times \{z\} }$ is trivial for every closed points $x \in X$ and $z \in Z$, then, by the seesaw theorem, we can find a line bundle $M$ on $X \times Z$ such that $p_{13}^* M \cong L$. Further,
+  $L|_{X \times \{y_0\} \times Z}$ is trivial
+  by the hypothesis, so $M$ is trivial. Thus $L$ is trivial and we will obtain the theorem.
+  \item[Step 2] $\;$ For any closed point $x \in X$, lemma 2.21 tells us that there is a projective cureve $C$ on $X$ passing $x_0$ and $x_1$. Let $\tilde{C} \to C$ be the normalization of $C$. Suppose that we show Theorem 2.23 for $X= \tilde{C}$. Then $L|_{\tilde{C} \times Y \times Z}$ will be trivial,
+  so $L|_{ \{x\} \times Y \times \{z\} }$ will be trivial for any closed point $z \in Z$.
+  As $x$ is an arbitrary closed point of $X$, by Step 1, we will obtain Theorem 2.23 for general $X$.
+  \item[Step 3] By Step 2, we may assume that $X$ is a smooth projective curve. To conclude the proof, we here use some properties of the Jacobian variety $J$ of $X$, which we explain in Section 2.8 below. By [Hartshorne"Algebraic Geometry" section3 -9.9], $L$ has degree zero on each fiber of $X \times (Y \times Z) \to Y \times Z$. Thus $L$ defines a morphism
+  \[
+  f \colon Y \times Z \to J.
+  \]
+  Because both $\{y_0\} \times Z$ and $Y \times \{z_0\}$ are mapped to $0$ by $f$, the rigidity lemma tells us that the whole $Y \times Z$ is also mapped to $0$ by $f$. Thus $L$ is trivial on $X \times Y \times Z$.
+\end{description}
+}
+
+\begin{que} ${}$
+  \begin{description}
+    \item[(1)]「To conclude the proof, we here use some properties of the Jacobian variety $J$ of $X$,」とありますが、$X$のヤコビ多様体とはなんでしょうか。（定義がわかりません）そしてここで使う性質とは何でしょうか。
+    \item[(2)] 「$L$ has degree zero on each fiber of $X \times (Y \times Z) \to Y \times Z$. 」とあります。これはどうしてでしょうか。
+    Hartshorneの引用された定理を見ると、Hilbert多項式がからんでいるようなのですが、そこから先に進めません。
+    \item[(3)] 「Thus $L$ defines a morphism $f \colon Y \times Z \to J.$」とありますが、これはなぜでしょうか。どういう射でしょうか。
+  \end{description}
+  以上です。
+\end{que}
+\end{comment}
+
+\bfsubsection{Cor 2.25}
+\barquo{
+Let $A$ be an abelian variety of dimension $g$ over $F$.
+\begin{description}
+  \item[(1)] For any integer $n$, $[n] \colon A \to A$ is a finite and flat morphism of degree $n^{2g}$.
+  \item[(2)] The abelian group $A(\ol{F})$ is divisible, i.e., for any $x \in A(\ol{F})$ and for any positive integer $n$, there is a $y \in A(\ol{F})$ with $[n](y) = x$.
+\end{description}
+}
+\begin{proof} ${}$
+  \begin{description}
+    \item[(1)] $L$をevenかつampleなline bundleとする。$[n]^* L = L^{n^2}$より$[n]^* L$もampleである。$[n]^*L$がampleということは、（閉とは限らない）埋め込み
+    \[
+    \psi_{\abs{\wt{L}}} \colon A \to \P(\grG (A, \wt{L})^{\vee}  )
+    \]
+    がある。ただし$\wt{L} = [n]^* L$であり、${}^{\vee}$は双対空間を表す。このとき次の図式は可換。
+    \[
+    \xymatrix{
+    A  \ar[r]^-{\psi_{\abs{\wt{L}}}} & \P(\grG (A, \wt{L})^{\vee}  ) \\
+    \Ker [n] \ar[u] \ar[r]^-{\psi_{\abs{ \Ker [n] }  }} & \P(\grG (\Ker [n], \wt{L}|_{\Ker [n] } )^{\vee}  ) \ar[u]
+    }
+    \]
+    ここで$\wt{L}|_{\Ker [n] }$は自明なので$\Ker [n]$の既約性分への分解を$\Ker [n] = \coprod_{i \in I} P_i$とすると、各成分$P_i$の$\psi_{\abs{ \Ker [n] }} $による像は$\P^{0}(F)$に含まれる。つまり一点である。
+    したがって、$\psi_{\abs{\wt{L}}}$は埋め込みなので各$P_i$は一点である。
+    よって$\dim \Ker [n] =  0$である。
+
+    また$[n]$はprojective varietyの間の射なのでprojectiveであり、とくに固有である。$\dim \Ker [n] =  0$であることをいま示したが、$[n]$は準同型なのですべての点のfiberの次元が等しい。ゆえに固有かつすべての点でのfiberの次元がゼロなので$[n]$はfiniteである。とくにfiberの次元が任意の点で等しいので$[n]$はflatである。
+
+    次にdegreeについて考える。ここでのdegreeは交点数を用いて定義される。ample line bundle $L$について
+    \[
+    L^{\cdot g} = (L. \cdots . L)
+    \]
+    と定義する。右辺の$L$は$g$個ある。(Reference: 石井志保子「特異点入門」)交点数は多重線形なので
+    \[
+    ( [n]^* L)^{\cdot g} = (L^{n^2}. \cdots . L^{n^2}) = n^{2g} L^{\cdot g}
+    \]
+    が従う。よってdegreeの定義から$\deg [n] = n^{2g}$である。
+    \item[(2)] $[n] \colon A \to A$は固有なのでその像$[n](A)$は閉部分多様体である。また$[n]$はflatなので
+    \[
+    \dim_0 A + \dim_0 \Ker [n] = \dim_0 [n](A)
+    \]
+    が成り立つ。よって$\dim \Ker [n] =  0$より$\dim A = \dim_0 A = \dim_0 [n](A) = \dim [n](A)$である。真閉部分多様体は次元が落ちるはずなので$A = [n](A)$がわかる。
+  \end{description}
+\end{proof}
+
+
+\bfsubsection{Lemma 2.27}
+\barquo{
+If $D$ is an effective Cartier divisor on an abelian variety $A$, then $\abs{2D}$ is base point free. In particular, $D$ is nef.
+}
+\begin{rem}
+  まず用語について解説する。$D$がbase point freeとは、rational map
+  \[
+  \psi_{\abs{D}} \colon A \dashrightarrow \P ( \grG (A, D)^{\vee} )
+  \]
+  が$A$全体で定義されることである。言い換えれば、
+  \[
+  \setmid{x \in A}{ \forall  0 \neq s \in \grG(A,D) \; s(x)=0 } = \emptyset
+  \]
+  ということである。また$D$がnef(数値的正、ネフ)とは
+\[
+\forall C \text{ irreducible curve} \; (D.C) \geq 0
+\]
+(交点数がゼロ以上)として定義される。
+
+さてeffectiveなCartier divisor $D$について、$2D$がbase point freeならば$D$がnefであることを確かめよう。$2D$がnefならあきらかに$D$もnefなので、はじめから$D$がbase point freeだと仮定して$D$がnefだといえばよい。
+
+いま$D$はeffectiveなので既約曲線$C$が$C \not\subset D$である限り、$(D.C) \geq 0$となる。交点数は線形同値なもの同士を入れ替えても不変なので、どんな$C$についてもある$D$と線形同値な$D'$があって$C \not\subset D'$となることをいえばよい。
+
+ハイリホーで示す。ある既約曲線$C$が存在して、すべての$D' \sim D$なる$D'$について$C \subset D'$であったとする。いま$\psi_{\abs{D}}$の定義から、任意の超曲面$H \subset \P ( \grG (A, D)^{\vee} )$に対して$D \sim \psi_{\abs{D}}^* H$である。$H$はある大域切断$s \in \grG(A,D)$により$H = \setmid{l}{l(s) = 0}$と表せる。
+そこでこれを$H_s$とおく。このとき仮定から
+\[
+\forall s \; C \subset \psi_{\abs{D}}^* H_s
+\]
+であるが、$\psi_{\abs{D}}^* H_s = \setmid{x \in A}{s(x)=0}$であったため、$D$がbase point freeであったことより$C = \emptyset$となるしかない。これは矛盾である。
+\end{rem}
