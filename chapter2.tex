@@ -317,7 +317,7 @@ Let $A$ be an abelian variety of dimension $g$ over $F$.
 \end{proof}
 
 
-\bfsubsection{Lemma 2.27}
+\bfsubsection{Remark 2.27}
 \barquo{
 If $D$ is an effective Cartier divisor on an abelian variety $A$, then $\abs{2D}$ is base point free. In particular, $D$ is nef.
 }
@@ -347,3 +347,122 @@ If $D$ is an effective Cartier divisor on an abelian variety $A$, then $\abs{2D}
 \]
 であるが、$\psi_{\abs{D}}^* H_s = \setmid{x \in A}{s(x)=0}$であったため、$D$がbase point freeであったことより$C = \emptyset$となるしかない。これは矛盾である。
 \end{rem}
+
+
+\newpage
+
+\bfsubsection{Remark 2.27}
+
+\barquo{
+For an $a \in A(\ol{F})$, we define the morphism $T_a \colon A_{\ol{F}} \to \Pic(A_{\ol{F}} )$ by
+\[
+T_a \colon x \mapsto x + a.
+\]
+For any given line bundle $L$ on $A_{\ol{F}}$, we define the map $\grl_L \colon A(\ol{F}) \to \Pic( A_{ \ol{F} } )$ by
+\[
+\grl \colon x \mapsto T_x^*L \ts L^{-1}.
+\]
+
+Cor (Theorem of Square)
+
+As groups, the map $\grl_L$ is a homomorphism from $A(\ol{F})$ to $\Pic( A_{ \ol{F} } )$.
+}
+
+\barquo{
+If $D$ is an effective Cartier divisor on an abelian variety $A$, then $\abs{2D}$ is base point free. In particular, $D$ is nef. Indeed, identifying $D$ with the corresponding Weil divisor, we write $D + a$ and $D-a$ for $T_a(D)$ and $T_{-a}(D)$ respectively. For any $x \in A(\ol{F})$, we choose a point $a \not\in \Supp (D-x) \cup \Supp(D +x)$. Then $x \not\in \Supp (D-a) \cup \Supp(D +a)$. Further, the theorem of the square implies that $(D-a) + (D+a) \sim 2D$.
+Thus $\abs{2D}$ is base point free.
+}
+
+
+
+
+\begin{rem}
+Hartshorne\cite{ha} section 2.6 命題6.11の、$X$が整分離的Noetherスキームで局所分解的なものとすると、Cartier divisorとWeil因子が同型になるということを踏まえて同一視をする。ここでAbelian多様体$A$はsmoothで、したがって局所環がregularであり、正則局所環はUFDであることから$A$は局所分解的であることに気を付ける。
+
+閉点$x \in A(\ol{F})$が任意に与えられたとする。$x$を台に含まないような、$2D$と線形同値なeffective因子の存在をいえば、$\abs{2D}$がbase point freeであることが従う。そういう因子を構成しよう。
+
+点$a \not\in \Supp(D-x) \cup \Supp(-D + x)$をとる。ここで因子$D-x$は像$T_{-x}(D)$を意味し、$-D + x$は逆元をとる写像を$i$として$T_x(i (D))$を意味する。このとき$a \not\in \Supp(D-x)$より$x \not\in \Supp(D-a)$であり、$a \not\in \Supp(-D+x)$より$x \not\in \Supp(D + a)$である。（本文には\textblue{誤植がある}）このときTheorem of squareにより
+\begin{align*}
+  (D-a) + (D+a) &= T_{-a}(D) + T_{a}(D) \\
+  &= \grl_{D}(-a) + \grl_D(a) + 2D \\
+  &= 2D
+\end{align*}
+だから$2D$と$(D+a) + (D-a)$は線形同値。$(D+a) + (D-a)$はあきらかにeffectiveなので$\abs{2D}$がbase point freeであることがいえた。
+
+
+
+\end{rem}
+
+
+\newpage
+
+\bfsubsection{Cor 2.28}
+\barquo{
+Let $A$ be an abelian variety, and let $D$ be an effective Cartier divisor on $A$. We set $L = O_X(D)$. (In particular, $\abs{2D}$ is base point free) Then the following are equivalent.
+\begin{description}
+  \item[(1)] $\Ker (\grl_L)$ is a finite subgroup of $A(\ol{F})$.
+  \item[(2)] A morphism $\Phi \colon A \to \P(H^0(A,L^2))$ associated to the complete linear system $\abs{2D}$ is a finite morphism onto its image.
+  \item[(3)] $L$ is ample.
+\end{description}
+
+PROOF.
+Properties (2) and (3) hold over $F$ if and only if those hold over $\ol{F}$, so we may assume that $F = \ol{F}$.
+
+\begin{description}
+  \item[(1) $\To$ (2)] Suppose that $\Phi$ maps a projective curve $C$ on $A$ to a single point. We are going to deduce a contradiction by showing that $\Ker (\grl_L)$ contains $C -C= \setmid{x_2 - x_1}{x_1, x_2 \in C(F)}$. We write $D = \sum_{i=1}^r a_i D_i$ with $a_i > 0$ and prime divisors $D_i$ on $A$.
+
+  We claim that either $(C + x) \cap D_i = \emptyset $ or $C + x \subset D_i$ for any $i$ and for any $x \in A(F)$. Because $D_i$ is an effective Cartier divisor on an abelian variety, it is nef by Remark 2.27. In particular, $(D_i \cdot C) \geq 0$. It follows from
+  \[
+  0 = (D \cdot C) = a_1 (D_1 \cdot C) + \cdots + a_r (D_r \cdot C),
+  \]
+  that $(D_i \cdot C) = 0$. Further, because $C + x$ is algebraically equivalent to $C$, we have $(D_i \cdot C + x) =(D_i \cdot C)=0$. Thus we obtain the claim.
+
+  Next, we claim that $D_i = D_i + x_1 - x_2$ for any $x_1, x_2 \in C(F)$. Indeed, if $y \in D_i$ is a closed point, then both $C - x_1 + y$ and $D_i$ contain $y$. Thus $C - x_1 + y \subset D_i$ by the above argument. It follows that $x_2 - x_1 + y \in D_i$, so $y \in D_i + x_1 - x_2$. Thus $D_i \subset D_i + x_1 - x_2$. By switching $x_1$ and $x_2$ in the above argument, we have $D_i \supset D_i + x_1 - x_2$. Hence we obtain the claim.
+
+  We set $L_i = O_A(D_i)$. Then $L = L_1^{\ts a_1} \ts \cdots \ts  L_r^{\ts a_r}$. By the above claim, we have $T_{x_2 - x_1}^*(L_i) = L_i$ for each $i$. It follows that
+  \begin{align*}
+    T_{x_2 - x_1}^*(L) &= T_{x_2 - x_1}^*(L_1)^{\ts a_1} \ts \cdots \ts T_{x_2 - x_1}^*(L_r)^{\ts a_r} \\
+    &= L_1^{\ts a_1} \ts \cdots \ts  L_r^{\ts a_r} \\
+  &= L.
+  \end{align*}
+  Thus $x_2 - x_1 \in \Ker (\grl_L)$, and so $C -C \subset \Ker (\grl_L)$. This is a contradiction.
+
+  \item[(2)$\To$(3)] Let $E$ be any coherent $O_A$-module on $A$. We are going to show that $E \ts L^{2n}$ is globally generated for any sufficiently large $2n$. We write $X$ for the image $\Phi(A)$ of $\Phi$. Because $\Phi_*(E)$ is coherent on $X$ and $O_X(1)$ is ample, there is an $n_0 > 0$ such that
+  \[
+  H^0(X, \Phi_*(E) \ts O_X(n) ) \ts O_X \to \Phi_*(E) \ts O_X(n)
+  \]
+  is surjective for any $n \geq n_0$ (See Hartshorne p.153). Pulling back by $\Phi$, we find that
+  \[
+  (*)  \quad  \quad    H^0(X, \Phi_*(E) \ts O_X(n) ) \ts O_A \to \Phi^* \Phi_*(E) \ts \Phi^* O_X(n)
+  \]
+  is also surjective.
+
+  On the other hand, it follows from $\Phi^* O_X(n) \cong L^{2n}$ and the projection formula that $\Phi_*(E \ts L^{2n}) \cong \Phi_*(E) \ts O_X(n)$. Further, as $\Phi$ is a finite morphism, the canonical morphism $\Phi^* \Phi_*(E) \to E$ is surjective. Thus the surjectivity of $(*)$ implies the surjectivity of
+  \[
+  H^0(A, E \ts L^{2n} ) \ts O_A \to E \ts L^{2n}
+  \]
+  for every $n \geq n_0$. Thus $L^2$ is ample, so $L$ is ample.
+
+  \item[(3)$\To$(1)] Let $p_i \colon A \tm A \to A$ denote the i-th projection. First, we note the equality
+  \[
+  \Ker \grl_L = \setmid{ x \in A(F)  }{ (m_A^* L^{-1} \ts p_1^* L)|_{A \tm \{ x \} } \text{ is trivial}  }.
+  \]
+  In particular, the seesaw theorem tells us that $\Ker \grl_L$ endowed with the reduced induced scheme structure is regarded as a closed subgroup scheme of $A$. We denote by $B$ the connected component of $\Ker(\grl_L)$ containing the identity. Then $B$ is an abelian subvariety of $A$. We are going to show that $\dim B = 0$.
+
+  We set $L' := (m_A^* L^{-1} \ts p_1^* L \ts p_2^* L)|_{B \tm B}$ on $B \tm B$. Because $L'|_{B \tm \{x\}} = (m_A^* L^{-1} \ts p_1^* L)|_{B \tm \{x\}} \ts p_2^* L|_{B \tm \{x\}}$ is trivial for any $x \in B$
+  and $L'|_{ \{0\} \tm B}$ is trivial, the seesaw theorem implies that $L'$ is trivial. Pulling back $L'$ by $([1]_B, [-1]_B) \colon B \to B \tm B$, we obtain that $L \ts [-1]_A^* L $ is trivial on $B$. On the other hand, because $L$ is ample on $A$, $L \ts [-1]_A^* L$ is ample on $A$. Thus $\dim B = 0$,
+   and we conclude that $\Ker(\grl_L)$ is a finite set.
+  \end{description}
+
+}
+\begin{que} ${}$
+\begin{description}
+  \item[(1)] 「Properties (2) and (3) hold over $F$ if and only if those hold over $\ol{F}$」とあります。これは何故なのでしょうか。
+  \item[(2)] (1)$\To$(2)の証明で、背理法（対偶）が使われているようです。(2)が成り立たず、$\Phi$がfiniteでなかったとして、$\Ker \grl_L$が無限集合であることを示す証明になっているように見えます。そこで$\Phi$がfiniteでなければある$x$があって、$\Phi^{-1}(x)$に含まれるprojectiveな曲線$C$があるということを使っているようですが、どうしてそういう$C$が存在するのでしょうか。
+
+  $\Phi$のすべてのファイバーの次元が$0$だとすると、$\Phi$はproperなのでfiniteになります。よって$\Phi$がfiniteでないという仮定から、$\Phi$のある点でのファイバーの次元は$1$以上であり、したがってあるファイバーに含まれるような射影曲線$C$がとれる、という証明で問題ないですか？
+  \item[(3)] 「Further, because $C + x$ is algebraically equivalent to $C$」とあります。algebraically equivalentとはどういう意味（定義）で、そしてどうしてそれが分かるのでしょうか。
+  \item[(3)]
+\end{description}
+
+\end{que}
