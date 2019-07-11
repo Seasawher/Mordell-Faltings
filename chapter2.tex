@@ -206,6 +206,15 @@ Let $s_1, \cdots , s_n$ be a basis of $H^0(X,L)$. $\cdots$
    \end{align*}
 \end{proof}
 
+
+\bfsubsection{Lemma 2.11}
+\barquo{
+Then the definition of $h^+$ gives $h^+(\tau (x)) = h^+(x)$.
+}
+\begin{rem}
+  Note that $\ord_P(\tau(x)) = \ord_{\tau^{-1}(P)} (x)$ and the residue degree at $P_i$ is independent of $i$ since $K / \Q$ is a Galois extension. (See Yukie\cite{雪江N2} Number 2 Cor 1.3,27)
+\end{rem}
+
 \begin{comment}
 \bfsubsection{Lemma 2.21}
 \barquo{
@@ -271,6 +280,62 @@ are all trivial.
   以上です。
 \end{que}
 \end{comment}
+
+
+\bfsubsection{Lemma 2.17}
+\barquo{
+Because $X$ is projective, $p$ is a closed morphism
+}
+\begin{rem}
+  $X \to \Spec F$はprojectiveなのでproperであり、とくにuniversally closedである。したがって$p$は閉写像。
+\end{rem}
+
+\bfsubsection{Lemma 2.19}
+\barquo{
+As the natural homomorphism $p^* M \to L$ coincides on each fiber with the natural homomorphism $\cdots$ we obtain that $p^* M \cong L$.
+}
+\begin{rem}
+$X,Y$を$F$スキームとする。このとき$L_1,L_2$が$X \tm_F Y$上のラインバンドルであり、任意の$y \in Y$に対して
+\[
+L_1 |_{X \tm \{y\}} \cong L_2 |_{X \tm \{y\}}
+\]
+であったとしても$L_1 \cong L_2$であるとは限らない。
+
+例を挙げよう。$p \colon X \tm_F Y \to Y$を射影とし、$M$を$Y$上のラインバンドルとする。このとき$p^* M |_{X \tm \{y\}} \cong O_{X \tm Y}|_{X \tm \{y\} }$だが、必ずしも$p^* M \cong O_{X \tm Y}$ではない。たとえば$X = \Spec F$, $Y = \P_F^m$, $M = \calo_{\P}(1)$
+とすればよい。
+\end{rem}
+
+
+
+\bfsubsection{Lemma 2.21}
+\barquo{
+Let $X$ be a projective variety, and let $x_0$ and $x_1$ be closed points of $X$. Then there is a projective curve $C$ on $X$ passing through $x_0$ and $x_1$.
+}
+\begin{proof}
+  $x_0 = x_1$ならこの点を通る直線$f$に対して$X \cap V(f)$を考えることを繰り返し、次元を$1$ずつ下げることができるのであきらか。（既約性をどう保証するのか？）$x_0 \neq x_1$とする。$\dim X = 1$ならあきらかなので$\dim X \geq 2$とする。$\dim X$についての帰納法で示そう。
+
+  $\pi \colon \wt{X} \to X$を$x_0, x_1$に沿う$X$のblowupとする。$X$が射影的なので$\wt{X}$も射影的。よって閉埋め込み$\wt{X} \to \P^N$がある。ここで$N$はそのような性質を満たす最小のものをとることにする。
+
+  ここで$x_0, x_1$は閉点なので、各$i$について$x_i$を含み$x_{1-i}$を含まないようなアファイン近傍$U_i = \Spec A_i$がある。閉点$x_i$は$A_i$の極大イデアル$\frakm_i$に対応しているとしよう。このとき$\pi^{-1}(x_i)$の次元がどうなっているかを考えたい。$X$がsmoothなら$\pi^{-1}(x_i) \cong \P^{\dim X -1}$であるが、ここではそれは使えないので次のように計算する。
+  \begin{align*}
+    \pi^{-1}(x_i) &= \pi^{-1}(U_i) \tm_{U_i} x_i \\
+    &\cong \Proj ( \oplus_{d \geq 0} \frakm_i^d ) \tm \Spec A_i / \frakm_i \\
+    &\cong \Proj ( ( \oplus_{d \geq 0} \frakm_i^d ) \ts \Spec A_i / \frakm_i  )\\
+    &\cong \Proj (  \oplus_{d \geq 0} \frakm_i^d / \frakm_i^{d+1} ) \\
+    &\cong \Proj (\gr_{\frakm_i} A_i )
+  \end{align*}
+  である。$\dim X \geq 2$という仮定より
+  \begin{align*}
+    \dim \pi^{-1}(x_i) &= \dim \gr_{\frakm_i} A_i -1 \\
+    &= \dim A_i - 1 \\
+    &\geq 1
+  \end{align*}
+  がわかる。したがって$\P^N$のhyperplane $H$をとると、あきらかに$\dim H = N -1$なので$\dim H + \dim \pi^{-1}(x_i) \geq N$が従う。ゆえに射影次元定理(Hartshorne\cite{ha} section 1-7.2)よりすべての$i$について$H \cap \pi^{-1}(x_i) \neq \emptyset$が成り立つ。
+  いまBertiniの定理により$H$が一般のhyperplaneとするとき$\wt{Y} = \wt{X} \cap H$は既約。よって$Y = \pi(\wt{Y})$とすれば$Y$は$X$の部分多様体であり、$H \cap \pi^{-1}(x_i) \neq \emptyset$より$Y$は$x_0,x_1$を含む。かつ$N$の最小性より(最小性を使わなくても一般の超平面で切っているのだから当然に思えるが)$\wt{Y} \neq \wt{X}$なので、
+  $\dim Y \leq \dim \wt{Y} < \dim \wt{X} = \dim X$である。よってこの$Y$に帰納法が適用できて証明が回る。
+\end{proof}
+
+
 
 \bfsubsection{Cor 2.25}
 \barquo{
@@ -455,6 +520,10 @@ Properties (2) and (3) hold over $F$ if and only if those hold over $\ol{F}$, so
   \end{description}
 
 }
+
+\begin{comment}
+\newpage
+
 \begin{que} ${}$
 \begin{description}
   \item[(1)] 「Properties (2) and (3) hold over $F$ if and only if those hold over $\ol{F}$」とあります。これは何故なのでしょうか。
@@ -462,7 +531,12 @@ Properties (2) and (3) hold over $F$ if and only if those hold over $\ol{F}$, so
 
   $\Phi$のすべてのファイバーの次元が$0$だとすると、$\Phi$はproperなのでfiniteになります。よって$\Phi$がfiniteでないという仮定から、$\Phi$のある点でのファイバーの次元は$1$以上であり、したがってあるファイバーに含まれるような射影曲線$C$がとれる、という証明で問題ないですか？
   \item[(3)] 「Further, because $C + x$ is algebraically equivalent to $C$」とあります。algebraically equivalentとはどういう意味（定義）で、そしてどうしてそれが分かるのでしょうか。
-  \item[(3)]
+  \item[(4)] (2)$\To$(3)の証明で、「$\Phi^* O_X(n) \cong L^{2n}$」とあります。これはどうしてでしょうか。
+  \item[(5)] 「as $\Phi$ is a finite morphism, the canonical morphism $\Phi^* \Phi_*(E) \to E$ is surjective.」とあります。これはどうしてでしょうか。よく知られた事実なのでしょうか。
+  \item[(6)] (3)$\To$(1)の証明で、「because $L$ is ample on $A$, $L \ts [-1]_A^* L$ is ample on $A$」とあります。これはどうしてでしょうか。$[-1]_A$が同型だからでしょうか？
+  \item[(7)] 「Thus $\dim B = 0$」とあります。これは何故でしょうか。
+  \item[(8)] 「 and we conclude that $\Ker(\grl_L)$ is a finite set.」とありますが、$\dim B = 0$からこれが従う理由がよくわかりません。どうしてでしょうか。
 \end{description}
 
 \end{que}
+\end{comment}
